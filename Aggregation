@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Date {
+private:
+    int day, month, year;
+public:
+    Date(int d, int m, int y) : day(d), month(m), year(y) {}
+    void display() const {
+        cout << day << "/" << month << "/" << year; 
+    }
+};
+
+class Book {
+private:
+    string title;
+    string author;
+    Date publicationDate; // Aggregation
+public:
+    Book(string t, string a, Date d) : title(t), author(a), publicationDate(d) {}
+
+    void displayDetails() const {
+        cout << "Title: " << title << endl;
+        cout << "Author: " << author << endl;
+        cout << "Publication Date: ";
+        publicationDate.display();
+        cout << endl;
+    }
+};
+
+int main() {
+    cout << "NAME: SABRINA MANAHIL WASEEM" << endl
+         << "ROLL NO: FESE-23006" << endl;
+
+    Date pubDate(15, 6, 2021);
+    Book book("The Great Gatsby", "F. Scott Fitzgerald", pubDate);
+    book.displayDetails();
+    return 0;
+}
