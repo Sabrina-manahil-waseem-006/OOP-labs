@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+class Book {
+private:
+    string title;
+    string author;
+public:
+    // Constructor
+    Book(const string& t, const string& a) : title(t), author(a) {}
+
+    // Method to display book details
+    void display() const {
+        cout << "Title: " << title << ", Author: " << author << endl;
+    }
+};
+
+class Library {
+private:
+    string libraryName;
+    vector<Book> books; // Composition: Library contains Book objects
+public:
+    // Constructor
+    Library(const string& name) : libraryName(name) {}
+
+    // Method to add a book to the library
+    void addBook(const Book& book) {
+        books.push_back(book);
+    }
+
+    // Method to display all books in the library
+    void showBooks() const {
+        cout << "Library: " << libraryName << endl;
+        for (const auto& book : books) {
+            book.display();
+        }
+    }
+};
+
+int main() {
+    // Create some Book objects
+    Book book1("1984", "George Orwell");
+    Book book2("To Kill a Mockingbird", "Harper Lee");
+    Book book3("The Great Gatsby", "F. Scott Fitzgerald");
+
+    // Create a Library object
+    Library myLibrary("Central Library");
+
+    // Add books to the library
+    myLibrary.addBook(book1);
+    myLibrary.addBook(book2);
+    myLibrary.addBook(book3);
+
+    // Display all books in the library
+    myLibrary.showBooks();
+
+    return 0;
+}
