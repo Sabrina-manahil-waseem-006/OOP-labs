@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+void swap(int* t, int* i) {
+    int temp;
+    temp = *t;
+    *t = *i;
+    *i = temp;
+
+    cout << endl << "After swapping" << endl;
+    cout << "First value: " << *t << endl
+         << "Second value: " << *i << endl;
+}
+
+int main() {
+    cout << "NAME: SABRINA MANAHIL WASEEM" << endl
+         << "ROLL NO: FESE-23006" << endl << endl;
+
+    int* pointer1, * pointer2;
+    int a = 10;
+    int b = 20;
+    pointer1 = &a;
+    pointer2 = &b;
+
+    cout << "First value: " << *pointer1 << endl
+         << "Second value: " << *pointer2 << endl;
+
+    swap(pointer1, pointer2);
+
+    return 0;
+}
