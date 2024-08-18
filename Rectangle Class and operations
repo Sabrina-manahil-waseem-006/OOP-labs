@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    int length;
+    int width;
+public:
+    // Constructor to initialize length and width
+    Rectangle(int l, int w) : length(l), width(w) {}
+
+    // Function to calculate and print the area of the rectangle
+    void area() const {
+        int area = length * width;
+        cout << "\nArea of rectangle is: " << area << "\n";
+    }
+
+    // Function to calculate and print the perimeter of the rectangle
+    void perimeter() const {
+        int perimeter = 2 * (length + width);
+        cout << "Perimeter of rectangle is: " << perimeter << "\n";
+    }
+};
+
+int main() {
+    cout << "NAME: SABRINA MANAHIL WASEEM" << endl
+         << "ROLL NO: FESE-23006" << endl << endl;
+
+    Rectangle r(3, 2); // Create a Rectangle object with length 3 and width 2
+    r.area();          // Call the method to print the area
+    r.perimeter();     // Call the method to print the perimeter
+
+    return 0;
+}
