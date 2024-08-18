@@ -1,26 +1,40 @@
-#include<iostream>
-#include<cstdlib>
-#include<ctime>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-srand(time(0));
- string options[3] = { "rock","paper","scissor" };
- cout << "welcome to game of rock, paper,scissor"<<endl;
- while (true) {
-     string computer = options[rand() % 3 + 1];
-     cout << "enter your option: "; string user;
-     cin >> user;
-     cout  << "you= " << user << " VS " << "computer= " << computer << endl;
-     if ((user == "rock" && computer == "scissor") ||
-         (user == "paper" && computer == "rock") ||
-         (user == "scissor" && computer == "paper")) {
-         cout << "CONGRATULATIONS! you win ! "; break;
-     }
-     else
-     { cout << "try again"<<endl; }
+int main() {
+    srand(time(0)); 
 
-     cout << "\n" << "do you want to play again? yes/no:  "; string a;
-     cin >> a;
-     if (a == "no") {
-         cout << endl << "thanks for playing!"; break;}
- }
+    string options[3] = { "rock", "paper", "scissor" };
+    cout << "Welcome to the game of Rock, Paper, Scissor!" << endl;
+
+    while (true) {
+        string computer = options[rand() % 3];
+        cout << "Enter your option: ";
+        string user;
+        cin >> user;
+
+        cout << "You = " << user << " VS " << "Computer = " << computer << endl;
+
+        if ((user == "rock" && computer == "scissor") ||
+            (user == "paper" && computer == "rock") ||
+            (user == "scissor" && computer == "paper")) {
+            cout << "CONGRATULATIONS! You win!" << endl;
+        } else if (user == computer) {
+            cout << "It's a tie!" << endl;
+        } else {
+            cout << "You lose! Try again." << endl;
+        }
+
+        cout << "\nDo you want to play again? yes/no: ";
+        string a;
+        cin >> a;
+        if (a == "no") {
+            cout << endl << "Thanks for playing!" << endl;
+            break;
+        }
+    }
+
+    return 0;
+}
