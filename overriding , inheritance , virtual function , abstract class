@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class person {
+private:
+    string name;
+    int age;
+public:
+    // Constructor to initialize name and age
+    person(string x, int y) : name(x), age(y) {}
+
+    // Virtual function to be overridden by derived class
+    virtual void show() const {
+        cout << "Name: " << name << endl << "Age: " << age;
+    }
+
+    // Virtual destructor
+    virtual ~person() {}
+};
+
+class student : public person {
+private:
+    int student_id;
+public:
+    // Constructor to initialize name, age, and student_id
+    student(string x, int y, int z) : person(x, y), student_id(z) {}
+
+    // Override the show method to include student_id
+    void show() const override {
+        person::show();
+        cout << endl << "Student ID: " << student_id;
+    }
+};
+
+int main() {
+    cout << "NAME: SABRINA MANAHIL WASEEM" << endl
+         << "ROLL NO: FESE-23006" << endl;
+
+    student s("Sabrina", 20, 2023006);
+    s.show();
+
+    return 0;
+}
