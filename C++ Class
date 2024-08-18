@@ -1,0 +1,70 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+class shape {
+private:
+    string color;
+public:
+    shape(string c) : color(c) {}
+    virtual void area() = 0; // Pure virtual function
+    virtual void display() const {
+        cout << "Color: " << color << endl;
+    }
+    virtual ~shape() {} // Virtual destructor for proper cleanup
+};
+
+class rectangle : public shape {
+private:
+    double width, height;
+    double area_value;
+public:
+    rectangle(string c, double w, double h) : shape(c), width(w), height(h), area_value(0) {}
+    void area() override {
+        area_value = width * height;
+    }
+    void display() const override {
+        shape::display();
+        cout << "Width: " << width << endl
+             << "Height: " << height << endl
+             << "Area: " << area_value << endl;
+    }
+};
+
+class circle : public shape {
+private:
+    double radius;
+    double area_value;
+public:
+    circle(string c, double r) : shape(c), radius(r), area_value(0) {}
+    void area() override {
+        area_value = M_PI * radius * radius; // Using M_PI for better precision
+    }
+    void display() const override {
+        shape::display();
+        cout << "Radius: " << radius << endl
+             << "Area: " << area_value << endl;
+    }
+};
+
+int main() {
+    cout << "NAME: SABRINA MANAHIL WASEEM" << endl
+         << "ROLL NO: FESE-23006" << endl;
+
+    rectangle r("red", 45, 98);
+    circle c("blue", 34);
+
+    shape* sh1 = &c;
+    shape* sh2 = &r;
+
+    sh1->area();
+    sh2->area();
+
+    cout << "ATTRIBUTES OF CIRCLE" << endl;
+    sh1->display();
+
+    cout << "ATTRIBUTES OF RECTANGLE" << endl;
+    sh2->display();
+
+    return 0;
+}
