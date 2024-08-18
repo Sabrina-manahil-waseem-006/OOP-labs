@@ -1,0 +1,21 @@
+ srand(time(0));
+ string options[3] = { "rock","paper","scissor" };
+ cout << "welcome to game of rock, paper,scissor"<<endl;
+ while (true) {
+     string computer = options[rand() % 3 + 1];
+     cout << "enter your option: "; string user;
+     cin >> user;
+     cout  << "you= " << user << " VS " << "computer= " << computer << endl;
+     if ((user == "rock" && computer == "scissor") ||
+         (user == "paper" && computer == "rock") ||
+         (user == "scissor" && computer == "paper")) {
+         cout << "CONGRATULATIONS! you win ! "; break;
+     }
+     else
+     { cout << "try again"<<endl; }
+
+     cout << "\n" << "do you want to play again? yes/no:  "; string a;
+     cin >> a;
+     if (a == "no") {
+         cout << endl << "thanks for playing!"; break;}
+ }
