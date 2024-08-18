@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class vehicle {
+public:
+    // Pure virtual function
+    virtual void fuel_efficiency(int miles, int gallons_of_fuel_used) const = 0;
+    virtual ~vehicle() {} // Virtual destructor for proper cleanup
+};
+
+class car : public vehicle {
+public:
+    // Override the pure virtual function
+    void fuel_efficiency(int miles, int gallons_of_fuel_used) const override {
+        if (gallons_of_fuel_used > 0) {
+            double fe = static_cast<double>(miles) / gallons_of_fuel_used;
+            cout << "Fuel efficiency of car is " << fe << " MPG" << endl;
+        } else {
+            cout << "Error: Gallons of fuel used must be greater than zero." << endl;
+        }
+    }
+};
+
+class truck : public vehicle {
+public:
+    // Override the pure virtual function
+    void fuel_efficiency(int miles, int gallons_of_fuel_used) const override {
+        if (gallons_of_fuel_used > 0) {
+            double fe = static_cast<double>(miles) / gallons_of_fuel_used;
+            cout << "Fuel efficiency of truck is " << fe << " MPG" << endl;
+        } else {
+            cout << "Error: Gallons of fuel used must be greater than zero." << endl;
+        }
+    }
+};
+
+int main() {
+    cout << "NAME: SABRINA MANAHIL WASEEM" << endl
+         << "ROLL NO: FESE-23006" << endl;
+
+    car c;
+    truck t;
+
+    c.fuel_efficiency(300, 12);
+    t.fuel_efficiency(300, 20);
+
+    return 0;
+}
