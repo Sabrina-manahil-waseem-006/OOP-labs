@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+ struct number {
+     int num;};
+ void swap(number a, number b) {
+     int c = a.num;
+     a.num = b.num;
+     b.num = c;
+     cout << "after swapping:" << endl;
+     cout << "number 1 = " << a.num << endl;
+     cout << "number 2 = " << b.num << endl;
+ }
+
+ int main() {
+     cout << "NAME : SABRINA MANAHIL WASEEM" << endl
+         << "ROLL NO : FESE-23006" << endl << "\n";
+     number n1, n2;
+     cout << "enter number 1: " << endl;
+     cin >> n1.num;
+     cout << "enter number 2: " << endl;
+     cin >> n2.num;
+     swap(n1, n2);
+
+ return 0;}
