@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class employee {
+public:
+    // Pure virtual function for salary calculation
+    virtual void calculate_salary(int sal) = 0;
+};
+
+class permanent_employee : public employee {
+public:
+    void calculate_salary(int s1) override {
+        cout << "SALARY OF PERMANENT EMPLOYEE:" << endl;
+        cout << "Before deduction: " << s1 << endl;
+        int salary1 = s1 - 200; 
+        cout << "After deduction: " << salary1 << endl;
+    }
+};
+
+class contracted_employee : public employee {
+public:
+    void calculate_salary(int s2) override {
+        cout << "SALARY OF CONTRACTED EMPLOYEE:" << endl;
+        cout << "Before deduction: " << s2 << endl;
+        int salary2;
+        // Variable deduction based on salary range
+        if (s2 == 100000) {
+            salary2 = s2;
+        } else if (s2 > 100000 && s2 < 300000) {
+            salary2 = s2 - (s2 * 0.03); // 3% deduction
+        } else if (s2 >= 300000) {
+            salary2 = s2 - (s2 * 0.05); // 5% deduction
+        }
+        cout << "After deduction: " << salary2 << endl;
+    }
+};
+
+int main() {
+    cout << "NAME: SABRINA MANAHIL WASEEM" << endl
+        << "ROLL NO: FESE-23006" << endl << endl;
+
+    permanent_employee p;
+    contracted_employee c;
+
+    p.calculate_salary(200000); // Testing with a permanent employee salary
+    cout << endl;
+    c.calculate_salary(200000); // Testing with a contracted employee salary
+
+    return 0;
+}
