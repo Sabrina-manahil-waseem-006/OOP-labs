@@ -1,4 +1,9 @@
- srand(time(0));
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+
+srand(time(0));
  string options[3] = { "rock","paper","scissor" };
  cout << "welcome to game of rock, paper,scissor"<<endl;
  while (true) {
