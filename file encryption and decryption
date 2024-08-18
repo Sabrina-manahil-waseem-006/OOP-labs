@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+cout << "\nNAME : SABRINA MANAHIL WASEEM" << endl
+    << "ROLL NO : FESE-23006" << "\n"<< "\n";
+cout << "enter any alphabet or symbol: ";
+char c;
+cin>>c;
+if(int(c)>=65&&int(c)<=90){
+cout<<c << "  is capital"<<endl;}
+else if(int(c)>=97&&int(c)<=122){
+cout<<c << " is small"<<endl;}
+else if(int(c)>=48&&int(c)<=57){
+cout<<c << " is number"<<endl;}
+else{
+cout<<"special symbol";}
+
+
+ string p;
+cout << "Enter any phrase: ";
+getline(cin, p);
+
+string encrypted_phrase;
+cout << "\n" << "encrypted phrase: " ;
+for (char i : p) {
+    int modified_ascii = int(i) + 3;
+    encrypted_phrase += char(modified_ascii);
+}
+cout << encrypted_phrase << endl << "\n";
+
+cout << "decrypted phrase:  ";
+for (char j : encrypted_phrase) {
+    int modified_ascii = int(j) - 3;
+    cout << char(modified_ascii);
+}
