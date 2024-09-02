@@ -34,6 +34,11 @@ Simplifies interaction with complex systems.
 A feature that allows a subclass to provide a specific implementation of a method that is already defined in its superclass.<br>
 Enhances the flexibility and reusability of the code.
 
+### 🏷️ Method Overloading:
+
+A feature that allows a class to have more than one method with the same name but different parameters.<br>
+Provides flexibility in method usage by allowing different operations under the same method name.
+ 
 ### 🔍 Pointers:
 
 Variables that store memory addresses of other variables.<br>
@@ -41,4 +46,4 @@ Used to refer to objects and can be essential for dynamic memory management.
 
 ## 🚀 Purpose
 
-This section offers practical examples and exercises designed to enhance your understanding of OOP principles and their application in programming. 🛠️
+This repository is designed to help reinforce concepts learned during the OOP labs, providing hands-on experience. 🛠️
